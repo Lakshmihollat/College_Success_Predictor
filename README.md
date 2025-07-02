@@ -1,22 +1,58 @@
-📚 College Success Predictor
-Predict student GPA based on attendance, exam scores & activity level — with intelligent recommendations.
+# 🎓 College Success Predictor
 
-💡 Features:
-🔍 Predicts GPA using ML (Random Forest)
+> Predict a student's GPA based on academic scores, attendance, and activity level — and get personalized tips for improvement.
 
-📊 Uses attendance, activity level, and subject scores
+---
 
-🤖 Generates custom advice to improve student outcomes
+## 💡 About the Project
 
-🌐 Flask-based web app
+This is a **machine learning + web app** project I built to understand how academic habits influence student success.
 
-💾 Trained on real-world Kaggle dataset + synthetic fields
+It takes in features like:
+- 🧮 Math, Reading, Writing Scores
+- 📅 Attendance Percentage
+- 💼 Activity Level (1–5)
 
-🧪 Tech Stack:
-Python (pandas, scikit-learn, numpy)
+Then it:
+- 🎯 Predicts the student's final semester GPA  
+- 📌 Gives smart recommendations like "Increase attendance" or "Participate in more activities"  
+- 🌐 Displays it all on a **Flask web app** with a clean UI
 
-Flask
+---
 
-HTML, CSS 
+## 🧠 Tech Stack
 
-Jupyter Notebook
+| Layer         | Tools Used                          |
+|---------------|-------------------------------------|
+| Data & ML     | pandas, numpy, scikit-learn         |
+| Model         | Random Forest Regressor             |
+| Frontend      | HTML, CSS                           |
+| Backend       | Flask                               |
+| Deployment    | Localhost (Render coming soon)      |
+
+---
+
+## 📊 Dataset
+
+Used a real-world dataset from **Kaggle's Student Performance Data** and added custom fields like attendance & activity level.
+
+---
+
+## ⚙️ How it Works
+
+1. Cleaned and preprocessed dataset  
+2. Visualized correlations and selected top features  
+3. Trained and tested ML models (Linear Regression, Random Forest)  
+4. Saved best model using `joblib`  
+5. Built a **Flask web app** that takes user input, predicts GPA, and shows advice  
+6. Added validation, error handling, and polished UI  
+
+---
+
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/Lakshmihollat/college-success-predictor.git
+cd college-success-predictor
+pip install -r requirements.txt
+python app.py
