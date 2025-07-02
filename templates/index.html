@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College GPA Predictor</title>
+    <style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        padding: 20px;
+        background: linear-gradient(to right, #465cb3, #35b0c0);
+        color: #333;
+    }
+
+    h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 25px;
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    button {
+        background-color: #0077b6;
+        color: white;
+        border: none;
+        padding: 12px;
+        margin-top: 20px;
+        border-radius: 10px;
+        width: 100%;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #023e8a;
+    }
+
+    .result, .recs {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .result {
+        background: #e0f7e9;
+        border: 2px solid #1b9e77;
+    }
+
+    .recs {
+        background: #fffde7;
+        border: 2px solid #ffb300;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>📚 College Success Predictor</h1>
+    <form method="POST" action="/predict">
+        <label>Attendance (%)</label>
+        <input type="number" name="attendance" required>
+
+        <label>Activity Level (1–5)</label>
+        <input type="number" name="activity_level" required>
+
+        <label>Math Score</label>
+        <input type="number" name="math_score" required>
+
+        <label>Reading Score</label>
+        <input type="number" name="reading_score" required>
+
+        <label>Writing Score</label>
+        <input type="number" name="writing_score" required>
+
+        <button type="submit">Predict GPA</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h3>🎯 Predicted GPA: {{ prediction }}</h3>
+    </div>
+    {% endif %}
+
+    {% if recs %}
+    <div class="recs">
+        <h3>📌 Recommendations:</h3>
+        <ul>
+        {% for r in recs %}
+            <li>{{ r }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
