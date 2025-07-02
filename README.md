@@ -28,7 +28,7 @@ Then it:
 | Model         | Random Forest Regressor             |
 | Frontend      | HTML, CSS                           |
 | Backend       | Flask                               |
-| Deployment    | Localhost (Render coming soon)      |
+| Deployment    | Localhost       |
 
 ---
 
